@@ -25,15 +25,25 @@ public class Program2 {
 			System.out.println(obj);
 		}
 		
-		System.out.println("\n=== TEST 3: Department insert: ===");
-		Department newDep = new Department(null, "Moda");
-		departmentDao.insert(newDep);
-		System.out.println("Department " + newDep.getId() + " inserted!");
+		/*
+		 * System.out.println("\n=== TEST 3: Department insert: ==="); Department newDep
+		 * = new Department(null, "Moda"); departmentDao.insert(newDep);
+		 * System.out.println("Department " + newDep.getId() + " inserted!");
+		 * 
+		 * System.out.println("\n=== TEST 4: Department update: ==="); dep =
+		 * departmentDao.findById(1); dep.setName("Computers");
+		 * departmentDao.update(dep);
+		 */
 		
-		System.out.println("\n=== TEST 4: Department update: ===");
-		dep = departmentDao.findById(1);
-		dep.setName("Computers");
-		departmentDao.update(dep);
+		System.out.println("\n=== TEST 5: Department delete: ===");
+		System.out.print("Enter by Id for delete test: ");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		Department newDep1 = departmentDao.findById(id);
+		if (newDep1 == null) {
+			System.out.println("Deleted completed!");
+		}
+		
 		
 		
 		sc.close();
